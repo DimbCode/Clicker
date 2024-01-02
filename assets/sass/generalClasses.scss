@@ -1,0 +1,88 @@
+// General Classes
+
+.container {
+    width: 100%;
+    max-width: calc($containerWidth + $containerPadding * 2);
+    padding: 0 $containerPadding;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.none {
+    display: none;
+}
+
+// Animations Classes
+
+%gradient-animation-right {
+    --gradient-rotate: 0deg;
+    border-right-width: 1rem;
+    border-right-style: solid;
+    border-image-source: conic-gradient(from var(--gradient-rotate), rgba(0,255,205,1), rgba(182,34,255,1), rgba(0,255,205,1));
+    border-image-slice: 1;
+    animation: rotate2 2s linear infinite;
+}
+
+%gradient-animation-left {
+    --gradient-rotate: 0deg;
+    border-left-width: 1rem;
+    border-left-style: solid;
+    border-image-source: conic-gradient(from var(--gradient-rotate), rgba(0,255,205,1), rgba(182,34,255,1), rgba(0,255,205,1));
+    border-image-slice: 1;
+    animation: rotate2 2s linear infinite;
+}
+
+%gradient-animation-bottom {
+    --gradient-rotate: 0deg;
+    border-bottom-width: 0.8rem;
+    border-bottom-style: solid;
+    border-image-source: conic-gradient(from var(--gradient-rotate), rgba(0,255,205,1), rgba(182,34,255,1), rgba(0,255,205,1));
+    border-image-slice: 1;
+    animation: rotate2 2s linear infinite;
+}
+
+%gradient-animation-top {
+    --gradient-rotate: 0deg;
+    border-top-width: 0.8rem;
+    border-top-style: solid;
+    border-image-source: conic-gradient(from var(--gradient-rotate), rgba(0,255,205,1), rgba(182,34,255,1), rgba(0,255,205,1));
+    border-image-slice: 1;
+    animation: rotate2 2s linear infinite;
+}
+
+// Buttons Classes
+
+%icon-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        font-size: 2rem;
+        color: $black;
+    }
+}
+
+// Status Section
+
+%status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
