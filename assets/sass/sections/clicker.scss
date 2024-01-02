@@ -1,11 +1,5 @@
 // Clicker Styles
 
-@property --gradient-rotate {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
 .clicker-wrapper {
     max-width: 45.4375rem;
     max-height: 29.75rem;
@@ -420,71 +414,5 @@
             color: $white;
             opacity: 1;
         }
-    }
-}
-
-// Animations
-
-@keyframes rotate1 {
-    0% {
-        --gradient-rotate: 0deg;
-        background: conic-gradient(from var(--gradient-rotate), rgba(0,255,205,1), rgba(182,34,255,1), rgba(0,255,205,1));
-    }
-
-    100% {
-        --gradient-rotate: 360deg;
-        background: conic-gradient(from var(--gradient-rotate), rgba(0,255,205,1), rgba(182,34,255,1) , rgba(0,255,205,1));
-    }
-}
-
-@keyframes rotate2 {
-    0% {
-        --gradient-rotate: 0deg;
-        border-image-source: conic-gradient(from var(--gradient-rotate), rgba(0,255,205,1), rgba(182,34,255,1), rgba(0,255,205,1));
-        border-image-slice: 1;
-        border-style: solid;
-    }
-
-    100% {
-        --gradient-rotate: 360deg;
-        border-image-source: conic-gradient(from var(--gradient-rotate), rgba(0,255,205,1), rgba(182,34,255,1), rgba(0,255,205,1));
-        border-image-slice: 1;
-        border-style: solid;
-    }
-}
-
-@keyframes error {
-    25% {
-        left: 0;
-    }
-
-    50% {
-        left: -0.5rem;
-    }
-
-    75% {
-        left: 0.5rem;
-    }
-
-    100% {
-        left: 0;
-    }
-}
-
-@keyframes error2 {
-    25% {
-        transform: rotate(0);
-    }
-
-    50% {
-        transform: rotate(-10deg);
-    }
-
-    75% {
-        transform: rotate(10deg);
-    }
-
-    100% {
-        transform: rotate(0);
     }
 }
