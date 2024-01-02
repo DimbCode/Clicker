@@ -2,7 +2,7 @@
 
 export class Statistic {
 
-    constructor ({ settings, business, parentElement }) {
+    constructor ({ settings, business, parentElement, time }) {
 
         // Independent Objects
 
@@ -10,7 +10,7 @@ export class Statistic {
 
         // System Properies
 
-        this._time = 0;
+        this._time = time;
         this._business = business;
 
         this._statisticList = [
@@ -42,6 +42,16 @@ export class Statistic {
 
     }
 
+    // Getters And Setters
+
+    get time() {
+        return this._time;
+    }
+
+    set time(value) {
+        this._time = value;
+    }
+
     // Methods
 
     createHTML(name, value) {
@@ -65,7 +75,7 @@ export class Statistic {
         this._statisticList = [
 
             {name: "Время в игре", value: this._time},
-            {name: "Текущий бизнес", value: this._business.name},
+            {name: "Последний бизнес", value: this._business.name},
             {name: "Общее количество кликов", value: this._settings.clickCount},
             {name: "Доход за клик", value: this._settings.countPerClick},
             {name: "Доход в секунду", value: this._settings.countPerSecond},

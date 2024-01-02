@@ -17,6 +17,7 @@ class Service {
         this._level = level;
         this._price = price;
         this._type = type;
+        this._isAnimation = false;
 
         // Elements Properties
 
@@ -65,7 +66,7 @@ class Service {
 
         return `
 
-            <div class="service__section service__section_error">
+            <div class="service__section service__section_error-1">
                 <span class="service__status-title">
                     Недостаточно денег для покупки!
                 </span>
@@ -154,27 +155,26 @@ class Service {
     buy() {
 
         const clickCount = this._settings.resultCount;
-        let isAnimation = false;
 
-        if (!isAnimation) {
+        if (!this._isAnimation) {
 
             if (clickCount < this._price) {
 
-                isAnimation = true;
-                this._element.classList.add("service_error");
+                this._isAnimation = true;
+                this._element.classList.add("service_error-1");
 
                 setTimeout(() => {
-                    isAnimation = false;
-                    this._element.classList.remove("service_error");
+                    this._isAnimation = false;
+                    this._element.classList.remove("service_error-1");
                 }, 2000);
 
             }   else {
 
-                isAnimation = true;
+                this._isAnimation = true;
                 this._element.classList.add("service_success");
 
                 setTimeout(() => {
-                    isAnimation = false;
+                    this._isAnimation = false;
                     this._element.classList.remove("service_success");
                     this._element.classList.add("service_purchased");
                 }, 2000);
@@ -213,8 +213,7 @@ export class ClickerService extends Service {
         const clickCount = this._settings.resultCount;
 
         if (!(clickCount < this._price)) {
-            this._settings.countPerClick = this._countPerClick;
-            console.log(this._settings.countPerClick);
+            this._settings.countPerClick += this._countPerClick;    
         }
 
         super.buy();
@@ -245,7 +244,7 @@ export class BusinessService extends Service {
         const clickCount = this._settings.resultCount;
 
         if (!(clickCount < this._price)) {
-            this._settings.countPerSecond = this._countPerSecond;
+            this._settings.countPerSecond += this._countPerSecond;
             this._business.name = this._name;
         }
 
@@ -271,9 +270,15 @@ export class FactorService extends Service {
     createHTML() {
         return `
 
-            <div class="service__section service__section_error">
+            <div class="service__section service__section_error-1">
                 <span class="service__status-title">
                     Недостаточно денег для покупки!
+                </span>
+            </div>
+
+            <div class="service__section service__section_error-2">
+                <span class="service__status-title">
+                    Ваш уровень товара выше, чем этот!
                 </span>
             </div>
 
@@ -348,7 +353,19 @@ export class FactorService extends Service {
         const clickCount = this._settings.resultCount;
 
         if (!(clickCount < this._price)) {
-            this._settings.countFactor = this._countFactor;
+
+            if (this._settings.levels[this._type] < this._level) {
+                this._settings.countFactor = this._countFactor;
+            }  else {
+                this._isAnimation = true;
+                this._element.classList.add("service_error-2");
+
+                setTimeout(() => {
+                    this._isAnimation = false;
+                    this._element.classList.remove("service_error-2");
+                }, 2000);
+            }
+
         }
 
         super.buy();

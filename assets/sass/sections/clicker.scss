@@ -150,11 +150,9 @@
         text-align: center;
         font-weight: $semibold;
 
-        // &:hover {
-        //     background: $black;
-        //     color: $white;
-        //     opacity: 1;
-        // }
+        &:hover {
+            opacity: 1;
+        }
         
         &_active {
             background: $white;
@@ -172,11 +170,12 @@
 .tab {
     padding: 1rem;
     width: 100%;
-    transition: .5s;
+    height: 100%;
+    transition: opacity .5s;
     visibility: visible;
 
     &_none {
-        top: 0;
+        transform: translate(0, -100%);
         position: absolute;
         opacity: 0;
         visibility: hidden;
@@ -272,13 +271,22 @@
 
     // Status Styles
 
-    &_error {
+    &_error-1,
+    &_error-2 {
         animation: error2 0.3s ease;
     }
 
-    &_error &__section {
+    &_error-1 &__section {
 
-        &_error {
+        &_error-1 {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &_error-2 &__section {
+
+        &_error-2 {
             visibility: visible;
             opacity: 1;
         }
@@ -329,7 +337,8 @@
             transition: .3s;
         }
 
-        &_error {
+        &_error-1,
+        &_error-2 {
             background: $red1;
             @extend %status;
         }

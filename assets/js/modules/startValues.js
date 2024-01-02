@@ -13,8 +13,9 @@ export const clickers = [
         ],
         level: 1,
         price: 100,
-        type: "clickers",
+        type: "clicker",
         countPerClick: 10,
+        parentEl: ".tab__content_services-clickers",
     },
 
     {
@@ -26,8 +27,9 @@ export const clickers = [
         ],
         level: 2,
         price: 1000,
-        type: "clickers",
+        type: "clicker",
         countPerClick: 100,
+        parentEl: ".tab__content_services-clickers",
     }
 
 ];
@@ -47,6 +49,7 @@ export const busineses = [
         price: 1,
         type: "business",
         countPerSecond: 1,
+        parentEl: ".tab__content_services-business",
     },
 
     {
@@ -60,6 +63,7 @@ export const busineses = [
         price: 10,
         type: "business",
         countPerSecond: 2,
+        parentEl: ".tab__content_services-business",
     }
 
 ];
@@ -79,6 +83,7 @@ export const factors = [
         price: 1,
         type: "factor",
         countFactor: 1.1,
+        parentEl: ".tab__content_services-factors",
     },
 
     {
@@ -92,6 +97,34 @@ export const factors = [
         price: 10,
         type: "factor",
         countFactor: 1.2,
+        parentEl: ".tab__content_services-factors",
     }
 
 ];
+
+// Clicker Settings
+
+
+const timer = { startTime: 0 };
+const business = { name: "Отсутствует" };
+const counter = { button: ".clicker__btn" };
+
+const settings = {
+    levels: {
+        clicker: 0,
+        business: 0,
+        factor: 0,
+    },
+    count: 0,
+    resultElement: ".clicker__score-number",
+    countPerClick: 1,
+    countPerSecond: 0,
+    countFactor: 1,
+};
+
+const statistic = {
+    parentElement: ".tab__content_info-blocks",
+    time: 0,
+}
+
+export { timer, settings, business, counter, statistic };

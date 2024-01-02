@@ -2,7 +2,12 @@
 
 export class Settings {
 
-    constructor ({ levels, count, resultElement, countPerClick, countPerSecond, countFactor }) {
+    constructor ({ levels, count, resultElement, countPerClick, countPerSecond, countFactor, timer }) {
+
+        // Independent Objects
+
+        this._statistic;
+        this._timer = timer;
 
         // System Properties
 
@@ -20,6 +25,10 @@ export class Settings {
         // ELement Properties
 
         this._resultElement = document.querySelector(resultElement);
+
+        // Start Settings
+
+        setInterval(() => this.updateText(), 1000);
 
     }
 
@@ -77,10 +86,20 @@ export class Settings {
         this._clickCount = value;
     }
 
+    set statistic(value) {
+        this._statistic = value;
+    }
+
+    set timer(value) {
+        this._timer = value;
+    }
+
     // Methods
 
     updateText() {
         this._resultElement.textContent = (this._resultCount).toFixed(2);
+        this._statistic.time = this._timer.time;
+        this._statistic.show();
     }
 
 }
