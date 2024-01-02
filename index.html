@@ -71,25 +71,25 @@
                                 <nav class="clicker__navigation">
                                     <ul class="clicker__list">
                                         <li class="clicker__list-item">
-                                            <button class="clicker__list-btn clicker__list-btn_active">
+                                            <button class="clicker__list-btn clicker__list-btn_active" data-tab="statistic">
                                                 Статистика
                                             </button>
                                         </li>
 
                                         <li class="clicker__list-item">
-                                            <button class="clicker__list-btn">
+                                            <button class="clicker__list-btn" data-tab="business">
                                                 Бизнесы
                                             </button>
                                         </li>
 
                                         <li class="clicker__list-item">
-                                            <button class="clicker__list-btn">
+                                            <button class="clicker__list-btn" data-tab="factors">
                                                 Множители
                                             </button>
                                         </li>
 
                                         <li class="clicker__list-item">
-                                            <button class="clicker__list-btn">
+                                            <button class="clicker__list-btn" data-tab="clickers">
                                                 Кликеры
                                             </button>
                                         </li>
@@ -105,81 +105,89 @@
 
                                 <!-- Clicker Tab -->
 
-                                <section class="tab clicker__tab">
+                                    <section class="tab clicker__tab" data-tab="statistic">
 
-                                    <header class="tab__header">
-                                        <h2 class="tab__title">
-                                            Статистика
-                                        </h2>
-                                    </header>
+                                        <div class="tab__wrapper">
 
-                                    <div class="tab__content tab__content_info-blocks">
-                                        
-                                    </div>
+                                            <header class="tab__header">
+                                                <h2 class="tab__title">
+                                                    Статистика
+                                                </h2>
+                                            </header>
 
-                                </section>
+                                            <div class="tab__content tab__content_info-blocks"></div>
 
-                                <!-- Clicker Tab End -->
+                                        </div>
 
-                                <!-- Clicker Tab -->
+                                    </section>
 
-                                <section class="tab clicker__taba none">
+                                    <!-- Clicker Tab End -->
 
-                                    <header class="tab__header">
-                                        <h2 class="tab__title">
-                                            Бизнесы
-                                        </h2>
-                                    </header>
+                                    <!-- Clicker Tab -->
 
-                                    <div class="tab__content tab__content_services tab__content_services-business">
+                                    <section class="tab tab_none clicker__tab" data-tab="business">
 
-                                    </div>
+                                        <div class="tab__wrapper">
 
-                                </section>
+                                            <header class="tab__header">
+                                                <h2 class="tab__title">
+                                                    Бизнесы
+                                                </h2>
+                                            </header>
 
-                                <!-- Clicker Tab End -->
+                                            <div class="tab__content tab__content_services tab__content_services-business"></div>
 
-                                <!-- Clicker Tab -->
+                                        </div>
 
-                                <section class="tab clicker__tab none">
+                                    </section>
 
-                                    <header class="tab__header">
-                                        <h2 class="tab__title">
-                                            Множители
-                                        </h2>
-                                    </header>
+                                    <!-- Clicker Tab End -->
 
-                                    <div class="tab__content tab__content_services tab__content_services-factors">
+                                    <!-- Clicker Tab -->
 
-                                    </div>
+                                    <section class="tab tab_none clicker__tab" data-tab="factors">
 
-                                </section>
+                                        <div class="tab__wrapper">
 
-                                <!-- Clicker Tab End -->
+                                            <header class="tab__header">
+                                                <h2 class="tab__title">
+                                                    Множители
+                                                </h2>
+                                            </header>
 
-                                <!-- Clicker Tab -->
+                                            <div class="tab__content tab__content_services tab__content_services-factors"></div>
 
-                                <section class="tab clicker__tab none">
+                                        </div>
 
-                                    <header class="tab__header">
-                                        <h2 class="tab__title">
-                                            Кликеры
-                                        </h2>
-                                    </header>
+                                    </section>
 
-                                    <div class="tab__content tab__content_services tab__content_services-clickers">
+                                    <!-- Clicker Tab End -->
 
-                                    </div>
+                                    <!-- Clicker Tab -->
 
-                                </section>
+                                    <section class="tab tab_none clicker__tab" data-tab="clickers">
 
-                                <!-- Clicker Tab End -->
+                                        <div class="tab__wrapper">
+
+                                            <header class="tab__header">
+                                                <h2 class="tab__title">
+                                                    Кликеры
+                                                </h2>
+                                            </header>
+
+                                            <div class="tab__content tab__content_services tab__content_services-clickers"></div>
+
+                                        </div>
+
+                                    </section>
+
+                                    <!-- Clicker Tab End -->
+
+                                </div>
 
                             </div>
 
                             <!-- Clicker Tabs End -->
-
-                        </div>
                             
                         </section>
 
@@ -201,8 +209,8 @@
 
     <!-- Wrapper End -->
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="assets/js/index.js" type="module"></script>
+<script src="assets/js/modules/Tabs.js" type="module"></script>
 <script src="assets/js/modules/Counter.js" type="module"></script>
 <script src="assets/js/modules/Business.js" type="module"></script>
 <script src="assets/js/modules/Services.js" type="module"></script>

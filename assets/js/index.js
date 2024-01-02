@@ -1,5 +1,6 @@
 // Imports
 
+import { Tabs } from "./modules/Tabs.js";
 import { clickers, busineses, factors } from "./modules/startValues.js";
 import { Settings } from "./modules/Settings.js";
 import { Counter } from "./modules/Counter.js";
@@ -12,6 +13,13 @@ import { ClickerService, BusinessService, FactorService } from "./modules/Servic
 let servicesCount = 0;
 let businessCount = 0;
 let factorsCount = 0;
+
+const tabs = new Tabs({
+    tabs: ".clicker__tab",
+    buttons: ".clicker__list-btn",
+    activeClass: "clicker__list-btn_active",
+    noneClass: "tab_none"
+});
 
 const settings = new Settings({
     levels: {
